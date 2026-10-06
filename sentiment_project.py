@@ -1,0 +1,23 @@
+import streamlit as st
+import joblib
+model=joblib.load("sentiment.pkl")
+st.set_page_config(layout='wide')
+st.title("Sentiment Analysis Project")
+st.text("hello")
+st.write("hello")
+st.success("hello")
+st.warning("hello")
+st.error("hello")
+st.sidebar.image("926015_passport_photo.PNG")
+st.sidebar.title("About us")
+st.sidebar.text("we are developing ml projects based on NLP in LN AI Academy")
+st.sidebar.title("About Projects")
+st.sidebar.text("This project reprents sentiments of given text")
+st.sidebar.title("Contact us")
+st.sidebar.text("+916283008506")
+sample_review=st.selectbox("Sample reviews",options=['good food','quality was not good','awesome food'])
+if st.button("Predict",key="b1"):
+    pred=model.predict([sample_review])
+    st.text(pred)
+st.text_input("Review")
+st.button("Predict",key="b2")
