@@ -21,8 +21,8 @@ if st.button("Predict",key="b1"):
         st.balloons()
 sample_review2=st.text_input("Review")
 if st.button("Predict",key="b2"):
-    pred=model.predict([sample_review])
-    prob=model.predict_proba([sample_review])
+    pred=model.predict([sample_review2])
+    prob=model.predict_proba([sample_review2])
     if pred[0]==0:
         st.error(f"Negative {prob[0][0]:.2f}")
     else:
